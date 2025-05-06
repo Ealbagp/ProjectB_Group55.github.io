@@ -1,0 +1,111 @@
+<div class="demo-content">
+    <h2>Health Impacts Analysis</h2>
+    <p class="subtitle">Correlations between air quality and public health outcomes</p>
+
+    <!-- Main Buttons -->
+    <div class="button-group">
+        <button class="action-button popup-trigger" id="healthDetailsBtn">View Detailed Health Data</button>
+        <button class="action-button popup-trigger" id="asthmaInfoBtn">What Is Asthma?</button>
+    </div>
+
+    <!-- Health Metrics Cards -->
+    <div class="health-metrics">
+        <div class="metric-card">
+            <div class="metric-value">+32%</div>
+            <div class="metric-label">
+                Asthma rates in high <a href="https://www.nyc.gov/assets/doh/downloads/pdf/environmental/air-quality-report-2023.pdf" target="_blank">PM2.5</a> zones
+            </div>
+        </div>
+        <div class="metric-card">
+            <div class="metric-value">22%</div>
+            <div class="metric-label">
+                Increase in ER visits during pollution spikes 
+                (<a href="https://a816-dohbesp.nyc.gov/IndicatorPublic/data-explorer/health-impacts-of-air-pollution/" target="_blank">NYC Health</a>)
+            </div>
+        </div>
+    </div>
+
+    <!-- Case Study -->
+    <div class="case-study">
+        <h3>Case Study: Childhood Asthma</h3>
+        <p>
+            Children in the <a href="https://www.publichealth.columbia.edu/research/centers/niehs-center-environmental-health-justice-northern-manhattan/news-events/newsbriefs/spring-2019/air-pollution-asthma" target="_blank">South Bronx</a> are 3× more likely to be hospitalized for asthma than the NYC average, often due to proximity to highways and heating oil emissions.
+        </p>
+        <div class="timeline">
+            <div class="timeline-event">
+                <div class="event-date">2020</div>
+                <div class="event-desc">Baseline study initiated on air quality & asthma</div>
+            </div>
+            <div class="timeline-event">
+                <div class="event-date">2023</div>
+                <div class="event-desc">Community-based interventions launched</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Interactive Bokeh Visualization Section -->
+    <div id="bokeh-plot-section">
+        <h3>Interactive Pollution & Asthma Correlation Plot</h3>
+        <p>Explore how daily pollution levels (PM2.5) relate to asthma ER visits. Use the lag slider to test for delayed effects.</p>
+        <div id="bokeh-plot">
+            <!-- Bokeh script and div will be inserted here -->
+        </div>
+    </div>
+
+    <!-- Accordion Section for FAQs or Deep Insights -->
+    <div class="accordion-section">
+        <h4>Did You Know?</h4>
+        <details>
+            <summary>How does PM2.5 affect children?</summary>
+            <p>Fine particulate matter can penetrate deep into children's lungs, impairing development and triggering inflammation—especially among those with pre-existing asthma.</p>
+        </details>
+        <details>
+            <summary>What neighborhoods are most at risk?</summary>
+            <p>Historically redlined and industrial-adjacent areas like the South Bronx and parts of Northern Manhattan experience higher pollution and asthma burdens.</p>
+        </details>
+        <details>
+            <summary>What is the Clean Heat Program?</summary>
+            <p>NYC’s Clean Heat Program phases out the use of heavy residual oil in buildings, reducing emissions of soot and sulfur dioxide. <a href="https://www.nyc.gov/html/gbee/html/initiatives/clean-heat.shtml" target="_blank">Learn more</a>.</p>
+        </details>
+    </div>
+
+    <!-- Pop-up Modal: Health Data -->
+    <div class="popup-modal" id="healthDetailsModal">
+        <div class="popup-content">
+            <span class="popup-close">&times;</span>
+            <h3>Detailed Health Impact Data</h3>
+            <div class="popup-body">
+                <ul>
+                    <li>Asthma hospitalizations rise 5.7% per 1μg/m³ PM2.5 increase 
+                        (<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8479525/" target="_blank">EHP study</a>)
+                    </li>
+                    <li>Exposure disparities linked to historic redlining 
+                        (<a href="https://pubmed.ncbi.nlm.nih.gov/38228884/" target="_blank">2025 study</a>)
+                    </li>
+                    <li>Social stressors (e.g., housing instability) worsen asthma outcomes 
+                        (<a href="https://www.publichealth.columbia.edu/news/air-pollution-linked-asthma-development-children" target="_blank">Columbia research</a>)
+                    </li>
+                </ul>
+                <p>
+                    Sources: <a href="https://a816-dohbesp.nyc.gov/IndicatorPublic/" target="_blank">NYC Health Portal</a>, 
+                    <a href="https://www.epa.gov/outdoor-air-quality-data" target="_blank">EPA AQ Data</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pop-up Modal: General Asthma Info -->
+    <div class="popup-modal" id="asthmaInfoModal">
+        <div class="popup-content">
+            <span class="popup-close">&times;</span>
+            <h3>What Is Asthma?</h3>
+            <div class="popup-body">
+                <p>Asthma is a chronic respiratory disease that causes inflammation and narrowing of the airways. Common symptoms include wheezing, shortness of breath, chest tightness, and coughing.</p>
+                <p>Triggers include air pollutants, allergens, cold air, stress, and respiratory infections.</p>
+                <p>For medical resources and action plans, visit: 
+                    <a href="https://kidshealth.org/en/parents/asthma.html" target="_blank">KidsHealth Asthma Guide</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
