@@ -1,24 +1,131 @@
+
+<!-- Mapping the Problem Section -->
 <div class="demo-content">
-    <h2>Pollution Hotspots Map</h2>
-    <p class="subtitle">Identifying areas of greatest environmental concern</p>
-    
-    <div class="map-container">
-        <div class="map-legend">
-            <div class="legend-item critical">Critical</div>
-            <div class="legend-item high">High</div>
-            <div class="legend-item moderate">Moderate</div>
+  <h2>Mapping the Problem</h2>
+  <p class="subtitle">
+    Now that we've highlighted the strong link between air pollution and asthma, it's time to focus on how this issue has evolved and who it impacts the most.
+
+    Our interactive map lets you explore how pollution and asthma rates have shifted over time across NYC neighborhoods, revealing two key emerging patterns.
+  </p>
+
+    <!-- Key Patterns Section (Just before the Graph) -->
+    <div class="key-patterns">
+        <div class="solutions-grid">
+            <button class="solution-card" onclick="openModal('positivePattern')">
+                <div class="solution-icon">📈</div>
+                <h3>The Positive</h3>
+                <p>Air pollution is steadily decreasing.</p>
+            </button>
+            <button class="solution-card" onclick="openModal('negativePattern')">
+                <div class="solution-icon">⚠️</div>
+                <h3>The Negative</h3>
+                <p>Low-income and marginalized communities face higher pollution and asthma risks.</p>
+            </button>
         </div>
-        <div class="map-placeholder"></div>
     </div>
 
-    <div class="hotspot-list">
-        <h3>Top 5 Priority Areas</h3>
-        <ol>
-            <li>South Bronx - Industrial Corridor</li>
-            <li>North Brooklyn - Waste Transfer Stations</li>
-            <li>Harlem - High Traffic Density</li>
-            <li>Queensbridge - Power Plant Proximity</li>
-            <li>Staten Island - Shipping Routes</li>
-        </ol>
+    <!-- Modals for Key Points -->
+    <div id="positivePattern" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('positivePattern')">&times;</span>
+            <h3>The Positive</h3>
+            <p>Overall air pollution has steadily decreased over the years, thanks to environmental initiatives and cleaner energy sources. This positive trend is a step toward healthier urban environments.</p>
+        </div>
     </div>
+
+    <div id="negativePattern" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('negativePattern')">&times;</span>
+            <h3>The Negative</h3>
+            <p><strong>Environmental Health Isn't Equal.</strong>
+
+              Not all communities are exposed to pollution in the same way. <strong>Research shows that low-income and historically marginalized populations</strong>, including Black, Latino, and immigrant communities, are more likely to live in areas with <strong>higher PM2.5 levels</strong>.<br><br>
+              
+              Understanding these disparities is key to creating fairer, healthier cities. Use this map to explore not just the <strong>where</strong>, but the <strong>why</strong> behind pollution and asthma in NYC.<br><br>              
+              <!-- Agregar un enlace de "Read More" -->
+              <div class="read-more">
+                <p><strong>Read more about the issue:</strong></p>
+                <ul>
+                  <li><a href="https://www.ucs.org/sites/default/files/attach/2019/06/Inequitable-Exposure-to-Vehicle-Pollution-NY.pdf" target="_blank">Inequitable Exposure to Vehicle Pollution in New York</a></li>
+                  <li><a href="https://www.epa.gov/sciencematters/study-finds-exposure-air-pollution-higher-people-color-regardless-region-or-income" target="_blank">EPA Study: Air Pollution Higher for People of Color</a></li>
+                  <li><a href="https://centerforthehumanities.org/air-heat-climate-data/" target="_blank">Center for the Humanities: Air, Heat & Climate Data</a></li>
+                  <li><a href="https://nyc-eja.org/wp-content/uploads/2024/06/NYC_CHAMPEJ_Report.pdf" target="_blank">NYC Community Health and Air Pollution Report</a></li>
+                </ul>
+              </div>
+        </div>
+    </div>
+
+    <!-- Visualizations -->
+    <div class="Unveiling the Hidden Patterns"> 
+      <h3>Unveiling the Hidden Patterns</h3>
+      <p>
+          In this set of interactive charts, we offer an in-depth look at how air pollution (PM2.5) and asthma cases have evolved over time across various neighborhoods in New York City. Through two visual approaches, you'll be able to explore the data more clearly:
+      </p><br>
+      <p><strong>1. Constant Scale to Observe Improvement:</strong>
+          In this chart, the pollution scale remains fixed over time, allowing you to see how air quality in the city has improved. You'll be able to identify areas where pollution has decreased year after year, highlighting progress toward cleaner air.
+      </p>
+
+      <p><strong>2. Yearly Reset Scale to Highlight Affected Areas:</strong> In this chart, the pollution scale resets each year, making it easier to identify neighborhoods with the highest pollution levels during each period. This approach allows you to clearly visualize the areas most impacted by pollution and how the most vulnerable communities continue to be the most affected.
+      </p>
+    </div>
+
+    
+
+
+  <!-- Main Button with Information Icon -->
+  <br>
+  <div class="button-group">
+    <button class="action-button popup-trigger" id="howToExploreBtn" onclick="openModal('howToExplore')">
+        <span class="info-circle">i</span> More on How to Explore the Map and Its Functionalities
+    </button>
+  </div>
+
+  <!-- Modals for Map Exploration -->
+  <div id="howToExplore" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('howToExplore')">&times;</span>
+        <h3 class="modal-title">How to Explore the Map?</h3>
+        <p>
+            You can navigate the data in the map through the following features:
+        </p><br>
+        <p class="feature-description">
+            <strong>🔴 Red heat zones:</strong> Represent PM2.5 concentrations, the deeper the red, the worse the air quality.
+        </p>
+        <p class="feature-description">
+            <strong>🔵 Blue circles:</strong> Mark the number of asthma cases within a neighborhood, scaled by the number of asthma-related visits.
+        </p>
+        <p class="feature-description">
+            <strong>📅 Year Dropdown:</strong> Adjust the year slider to move through time and see how pollution and asthma rates have changed over the years.
+        </p>
+        <p class="feature-description">
+            <strong>🌍 Socio-Economic Layer Toggle:</strong> Fade out wealthier neighborhoods to highlight low-income areas, showcasing the disproportionate burden on marginalized communities.
+        </p><br>
+        <p>
+            Use this map to explore how different neighborhoods in NYC are impacted by air pollution and asthma.
+        </p>
+    </div>
+  </div>
+
+
+
+  <!-- Interactive Bokeh Visualization Section -->
+   
 </div>
+
+<style>
+  /* Styling the information icon inside the button */
+  .info-circle {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      width: 20px; /* Circle size */
+      height: 20px; /* Circle size */
+      color: #ffffff; /* Default text color (black) */
+      font-weight: bold;
+      border-radius: 50%; /* Makes it round */
+      font-size: 14px; /* Font size of the "i" */
+      margin-right: 10px; /* Space between the icon and the text */
+      border: 2px solid #ffffff; /* Border color same as the text color */
+  }
+
+</style>
