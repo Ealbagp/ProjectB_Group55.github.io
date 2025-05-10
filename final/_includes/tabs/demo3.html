@@ -261,11 +261,11 @@
   </div>
 
   <div id="norescaled" class="iframe-container active">
-    <iframe src="{{ 'assets/plots/hotspot_without_rescaling.html' | relative_url }}" width="100%" height="800" frameborder="0"></iframe>
+    <iframe src="{{ 'assets/plots/hotspot_without_rescaling.html' | relative_url }}" width="100%" height="725" frameborder="0"></iframe>
   </div>
 
   <div id="rescaled" class="iframe-container">
-    <iframe src="{{ 'assets/plots/hotspot_resclaing.html' | relative_url }}" width="100%" height="800" frameborder="0"></iframe>
+    <iframe src="{{ 'assets/plots/hotspot_resclaing.html' | relative_url }}" width="100%" height="725" frameborder="0"></iframe>
   </div>
 
   <script>
@@ -287,6 +287,20 @@
       }
     }
   </script>
+
+  <!-- Data warning -->
+    <div class="data-warning" style="font-size: 0.95rem; margin-top: 1rem; color: #555; background-color: #f9f9f9; padding: 0.8rem 1rem; border-left: 4px solid #BA665Cff; border-radius: 4px;">
+    <strong> Data Insight:</strong> As you explore the maps, you may notice missing asthma data for certain neighborhoods, particularly the South Bronx, due to gaps in neighborhood-level records. However, studies show that the South Bronx mirrors the trends seen in other underserved areas, with elevated pollution levels and asthma rates that are more than double the city's average. Despite these data gaps, the maps still provide valuable insights into the broader pollution and health disparities across the city.
+    <br>
+    <small>For more information, you can check out the full articles on <a href="https://www.cbsnews.com/newyork/news/bronx-asthma-rates-environmental-justice/" target="_blank">asthma rates in the Bronx</a> and <a href="https://pix11.com/news/created-equal/environmental-racism-in-the-bronx-why-the-asthma-rate-is-so-high-in-the-borough/" target="_blank">environmental racism in the Bronx</a>.</small>
+  </div><br>
+
+  <!-- Question about decline in pollution -->
+  <div class="data-insight">
+    <p><strong>It is clear that social injustice remains a challenge we still need to address. However, from a more optimistic standpoint, we can also observe improvements in air pollution</strong>. The question that arises from this observation is: <strong>What has driven this decline in pollution?</strong> As we will explore in the next section, this positive shift is not accidental, it is the result of deliberate government policies and targeted interventions. Let's take a closer look at how these efforts have contributed to cleaner air in the following tab.</p>
+  </div>
+
+  
 
   <!-- Styling the information icon inside the button -->
   <style>
