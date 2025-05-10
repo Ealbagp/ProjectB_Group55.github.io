@@ -446,3 +446,13 @@ a:hover {
   color: var(--white);
   box-shadow: var(--shadow);
 }
+
+
+.read-more-list {
+  list-style-type: disc; /* Esto asegura que los puntos sigan siendo círculos */
+  padding-left: 15px; /* Ajusta la sangría para los puntos */
+}
+
+.read-more-list li {
+  margin-bottom: 5px;  /* Espacio entre los elementos de la lista */
+}
