@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         /* Dynamic background styles for each tab */
-        {% for i in (1..5) %}
+        {% for i in (1..4) %}
             {% assign bg_key = "tab" | append: i | append: "_bg" %}
             .content-pane[data-content="{{ i }}"] {
                 background-image: url('{{ page[bg_key] | default: "/assets/images/default-bg.jpg" | relative_url }}');
@@ -32,7 +32,7 @@
 
         <div class="slider-header">
             <div class="slider-tabs">
-                {% for i in (1..5) %}
+                {% for i in (1..4) %}
                     {% assign title_key = "tab" | append: i | append: "_title" %}
                     <div class="slider-tab {% if forloop.first %}active{% endif %}" data-tab="{{ i }}">
                         {{ page[title_key] | default: "DEMO " }}
@@ -53,8 +53,6 @@
                             {% include tabs/demo3.html %}
                         {% elsif i == 4 %}
                             {% include tabs/demo4.html %}
-                        {% elsif i == 5 %}
-                            {% include tabs/demo5.html %}
                         {% endif %}
                     </div>
                 </div>
