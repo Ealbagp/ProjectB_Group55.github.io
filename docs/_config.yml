@@ -36,9 +36,6 @@ assets:
   plots: "/assets/plots/"
   js : "/assets/js/"
 
-_includes:
-  tabs : "/_includes/tabs/"
-
 collections:
   posts:
     output: false
