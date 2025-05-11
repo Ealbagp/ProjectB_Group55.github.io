@@ -23,11 +23,17 @@ email: albagonp@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   An analysis of the relationship between air pollution and asthma 
   rates in New York City, using publicly available datasets.
-url: "https://ProjectB_Group55.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "/ProjectB_Group55.github.io/"
+url: "https://ealbagp.github.io/ProjectB_Group55.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  Ealbagp
 
 # Build settings
 theme: minima
+
+assets:
+  images: "/assets/images/"
+  css: "/assets/css/"
+  plots: "/assets/css/"
 
 collections:
   posts:
