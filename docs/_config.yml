@@ -34,7 +34,6 @@ assets:
   image: "/assets/images/nyc.jpg"
   css: "/assets/css/"
   plots: "/assets/css/"
-  slider: "/assets/js/"
   js : "/assets/js/"
 
 collections:
