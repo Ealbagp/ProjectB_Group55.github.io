@@ -26,7 +26,7 @@
             background-color: #f9f9f9;
             padding: 0.8rem 0rem;
             border-radius: 8px;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+            box-shadow: rgba(0, 0, 0, 0.15);
             transition: box-shadow 0.3s ease, transform 0.3s ease;
             cursor: default;
         }
@@ -61,7 +61,7 @@
     <div class="Unveiling-patterns-container">
 
         <br>
-        <h2 class="unveiling-title">Exploring the Link: PM2.5 and Asthma</h2>
+        <h3 class="unveiling-title">Exploring the Link: PM2.5 and Asthma</h3>
         <p class="intro-text">
             Use the interactive plot below to explore the link between <strong>air pollution</strong> and <strong>asthma
                 hospitalizations</strong> in New York City from 2008 to 2022. Since pinpointing harmful pollution levels
@@ -71,7 +71,7 @@
         </p><br>
 
         <p class="feature-description"> &#11088; <strong>Use the slider to shift the asthma curve horizontally</strong>
-            This allows you to explore how pollutin in earlier years might be associated with asthma outcomes later,
+            This allows you to explore how pollution in earlier years might be associated with asthma outcomes later,
             since normally repiratory effects don't appear right away.
         </p>
     </div>
@@ -98,7 +98,8 @@
                 <strong>🟠 Orange line:</strong> Shows the normalized asthma hospitalization rate.
             </p>
             <p class="feature-description">
-                <strong>Click on the bars or the lines on the legend</strong> The corresponding data will appear or
+                <strong>🖱️ Choose to click on the bars or the lines on the legend</strong> The corresponding data will
+                appear or
                 disappear, showing
                 the annual cigarette-equivalent numbers above the bars if selected.
             </p>
@@ -213,7 +214,7 @@
 
     <!-- Accordion Section for FAQs or Deep Insights -->
     <div class="accordion-section">
-        <h3>What does the data tell us?</h3>
+        <h4>What does the data tell us?</h4>
         <details>
             <summary style="font-size: larger; color: #64748B"> <strong>The Burden of Pollution in <i>Cigarette
                         Equivalents</i></strong></summary>
@@ -251,7 +252,7 @@
     <div class="button-group">
         <br>
         <button class="action-button popup-trigger" id="howToExploreBtn" onclick="openModal('relation')">
-            <strong> More on How to Explore the Map and Its Functionalities </strong>
+            <strong> Understanding Other Factors Behind Asthma </strong>
         </button>
     </div>
 
@@ -272,12 +273,13 @@
 
             <p>These <strong>confounding variables</strong> cause short-term fluctuations and noise that obscure a
                 simple one-to-one relationship in observational data.</p>
-
+            
+            <br>
             <h4><strong>Key Finding</strong></h4>
-            <p><strong>Chronic PM2.5 exposure increases the risk of asthma attacks, hospitalizations, and respiratory
-                    symptoms.</strong></p>
-
-            <h4>📚 <strong>Supporting Studies</strong></h4>
+            <strong>Chronic PM2.5 exposure increases the risk of asthma attacks, hospitalizations, and respiratory
+                symptoms.</strong>
+            <br>
+            <h4><strong>Supporting Studies</strong></h4>
             <ul style="padding-left: 40px;">
                 <li><strong>Gauderman et al. (2015)</strong>, NEJM: <a
                         href="https://www.nejm.org/doi/full/10.1056/NEJMoa1414123" target="_blank">Cleaner air improves
