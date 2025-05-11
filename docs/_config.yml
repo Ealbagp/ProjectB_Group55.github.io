@@ -31,9 +31,11 @@ github_username:  Ealbagp
 theme: minima
 
 assets:
-  image: "/assets/images/nyc.jpg"
+  image: "/assets/images/"
+  nyc: "/assets/images/nyc.jpg"
   css: "/assets/css/"
   plots: "/assets/css/"
+  slider: "/assets/js/slider.js"
   js : "/assets/js/"
 
 collections:
