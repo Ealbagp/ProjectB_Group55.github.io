@@ -1,0 +1,324 @@
+<!-- Mapping the Problem Section -->
+<div class="demo-content">
+  <h2>Mapping the Problem</h2>
+  <p class="subtitle">
+    Now that we've highlighted the strong link between air pollution and asthma, it's time to focus on how this issue has evolved and who it impacts the most.
+    Our interactive map lets you explore how pollution and asthma rates have shifted over time across NYC neighborhoods, revealing two key emerging patterns.
+  </p>
+
+  <!-- Key Patterns Section (Just before the Graph) -->
+  <div class="key-patterns">
+    <div class="solutions-grid">
+      <button class="solution-card" onclick="openModal('positivePattern')">
+        <div class="solution-icon">📈</div>
+        <h3>The Positive</h3>
+        <p>Air pollution is steadily decreasing.</p>
+      </button>
+      <button class="solution-card" onclick="openModal('negativePattern')">
+        <div class="solution-icon">⚠️</div>
+        <h3>The Negative</h3>
+        <p>Low-income and marginalized communities face higher pollution and asthma risks.</p>
+      </button>
+    </div>
+  </div>
+
+  <!-- Modals for Key Points -->
+  <div id="positivePattern" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('positivePattern')">&times;</span>
+      <h3>The Positive</h3>
+      <p>Air pollution across New York has steadily declined in recent years, driven by environmental policies and the shift toward cleaner energy. This encouraging trend marks a meaningful step toward a healthier, more livable city.</p>    </div>
+  </div>
+
+  <div id="negativePattern" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('negativePattern')">&times;</span>
+      <h3>The Negative</h3>
+      <p><strong>Environmental Health Isn't Equal.</strong>
+        Not all communities are exposed to pollution in the same way. <strong>Research shows that low-income and historically marginalized populations</strong>, including Black, Latino, and immigrant communities, are more likely to live in areas with <strong>higher PM2.5 levels</strong>.<br><br>
+        
+        Understanding these disparities is key to creating fairer, healthier cities. Use this map to explore not just the <strong>where</strong>, but the <strong>why</strong> behind pollution and asthma in NYC.<br><br></p>
+
+      <!-- Agregar un enlace de "Read More" -->
+      <div class="read-more">
+        <p class="read-more-title"><strong>Read more about the issue:</strong></p>
+        <ul class="read-more-list">
+          <li><a href="https://www.ucs.org/sites/default/files/attach/2019/06/Inequitable-Exposure-to-Vehicle-Pollution-NY.pdf" target="_blank">Inequitable Exposure to Vehicle Pollution in New York</a></li>
+          <li><a href="https://www.epa.gov/sciencematters/study-finds-exposure-air-pollution-higher-people-color-regardless-region-or-income" target="_blank">EPA Study: Air Pollution Higher for People of Color</a></li>
+          <li><a href="https://centerforthehumanities.org/air-heat-climate-data/" target="_blank">Center for the Humanities: Air, Heat & Climate Data</a></li>
+          <li><a href="https://nyc-eja.org/wp-content/uploads/2024/06/NYC_CHAMPEJ_Report.pdf" target="_blank">NYC Community Health and Air Pollution Report</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Visualizations -->
+  <div class="Unveiling-patterns-container">
+    <h3 class="unveiling-title">Unveiling the Hidden Patterns</h3>
+    <p class="intro-text">
+      In this set of interactive charts, we offer an in-depth look at how air pollution (PM2.5) and asthma cases have evolved over time across various neighborhoods in New York City. Through two visual approaches, you'll be able to explore the data more clearly:
+    </p><br>
+    
+    <p class="feature-description"><strong>1. Constant Scale to Observe Improvement:</strong>
+      In this chart, the pollution scale remains fixed over time, allowing you to see how air quality in the city has improved. You'll be able to identify areas where pollution has decreased year after year, highlighting progress toward cleaner air.
+    </p>
+
+    <p class="feature-description"><strong>2. Yearly Reset Scale to Highlight Affected Areas:</strong> 
+      In this chart, the pollution scale resets each year, making it easier to identify neighborhoods with the highest pollution levels during each period. This approach allows you to clearly visualize the areas most impacted by pollution and how the most vulnerable communities continue to be the most affected.
+    </p>
+  </div>
+
+  <!-- Main Button with Information Icon -->
+  <br>
+  <div class="button-group">
+    <button class="action-button popup-trigger" id="howToExploreBtn" onclick="openModal('howToExplore')">
+        <span class="info-circle">i</span> More on How to Explore the Map and Its Functionalities
+    </button>
+  </div>
+
+  <!-- Modals for Map Exploration -->
+  <div id="howToExplore" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('howToExplore')">&times;</span>
+      <h3 class="modal-title">How to Explore the Map?</h3>
+      <p>You can navigate the data in the map through the following features:</p>
+      <br>
+      <p class="feature-description">
+        <strong>🔴 Red heat zones:</strong> Represent PM2.5 concentrations, the deeper the red, the worse the air quality.
+      </p>
+      <p class="feature-description">
+        <strong>🔵 Blue circles:</strong> Mark the number of asthma cases within a neighborhood, scaled by the number of asthma-related visits.
+      </p>
+      <p class="feature-description">
+        <strong>📅 Year Dropdown:</strong> Adjust the year slider to move through time and see how pollution and asthma rates have changed over the years.
+      </p>
+      <p class="feature-description">
+        <strong>🌍 Socio-Economic Layer Toggle:</strong> Fade out wealthier neighborhoods to highlight low-income areas, showcasing the disproportionate burden on marginalized communities.
+      </p>
+      <br>
+      <p>Use this map to explore how different neighborhoods in NYC are impacted by air pollution and asthma.</p>
+    </div>
+  </div>
+
+  <!-- CSS Styles for the Modal -->
+  <style>
+    /* Modal background */
+    .modal {
+      display: none; 
+      position: fixed; 
+      z-index: 1; 
+      left: 0;
+      top: 0;
+      width: 100%; 
+      height: 100%; 
+      overflow: auto; 
+      background-color:  #BA665Cff; /* Rosita suave */
+      padding-top: 60px;
+      transition: opacity 0.3s ease;
+    }
+
+    /* Modal content */
+    .modal-content {
+      background-color: #fff;
+      margin: 5% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+      max-width: 700px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Close button */
+    .close {
+      color: #aaa;
+      font-size: 28px;
+      font-weight: bold;
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: #000;
+    }
+
+    /* Modal title */
+    .modal-title {
+      color:  #000;
+      font-size: 28px; 
+      font-weight: bold;
+      text-align: left;
+      margin-bottom: 20px;
+    }
+
+    /* Description of features */
+    .feature-description {
+      font-size: 16px;
+      margin-bottom: 10px;
+      line-height: 1.6;
+    }
+
+    .feature-description strong {
+      color: #000000;
+      font-size: 18px;
+    }
+
+    /* Add spacing and styling for the modal content */
+    .modal-content p {
+      font-family: 'Arial', sans-serif;
+      font-size: 16px;
+      color: #444;
+      line-height: 1.6;
+    }
+
+    /* Add hover effect for descriptions */
+    .feature-description:hover {
+      background-color: #f7f7f7;
+      border-radius: 5px;
+      padding: 5px;
+    }
+  </style>
+
+
+
+
+  <!-- Interactive Bokeh Visualization Section -->
+  <!-- <iframe src="{{ 'assets/plots/hotspot_resclaing.html' | relative_url }}" width="100%" height="800" frameborder="0"></iframe> -->
+
+  <title>Gráficos Intercambiables</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f9f9f9;
+      padding: 20px;
+    }
+
+    .toggle-buttons {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .toggle-buttons button {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      font-size: 14px;
+      font-weight: 700;
+      background-color: #fff;
+      color: #BA665C;
+      border: 2px solid #BA665C;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+    }
+
+    .toggle-buttons button:hover {
+      background-color: #f4d8d5;
+    }
+
+    .toggle-buttons button.active {
+      background-color: #BA665C;
+      color: white;
+    }
+
+    .badge {
+      display: inline-block;
+      background-color: #BA665C;
+      color: white;
+      font-size: 12px;
+      font-weight: 700;
+      width: 20px;
+      height: 20px;
+      line-height: 20px;
+      text-align: center;
+      border-radius: 50%;
+    }
+
+    .toggle-buttons button.active .badge {
+      background-color: white;
+      color: #BA665C;
+    }
+
+    .iframe-container {
+      display: none;
+    }
+
+    .iframe-container.active {
+      display: block;
+    }
+  </style>
+
+  <div class="toggle-buttons">
+    <button id="btn-norescaled" class="active" onclick="mostrarIframe('norescaled')">
+      <span class="badge">1</span> Constant Scale
+    </button>
+    <button id="btn-rescaled" onclick="mostrarIframe('rescaled')">
+      <span class="badge">2</span> Yearly Reset Scaling 
+    </button>
+  </div>
+
+  <div id="norescaled" class="iframe-container active">
+    <iframe src="{{ 'assets/plots/hotspot_without_rescaling.html' | relative_url }}" width="100%" height="725" frameborder="0"></iframe>
+  </div>
+
+  <div id="rescaled" class="iframe-container">
+    <iframe src="{{ 'assets/plots/hotspot_resclaing.html' | relative_url }}" width="100%" height="725" frameborder="0"></iframe>
+  </div>
+
+  <script>
+    function mostrarIframe(id) {
+      document.querySelectorAll('.iframe-container').forEach(div => {
+        div.classList.remove('active');
+      });
+
+      document.getElementById(id).classList.add('active');
+
+      document.querySelectorAll('.toggle-buttons button').forEach(btn => {
+        btn.classList.remove('active');
+      });
+
+      if (id === 'rescaled') {
+        document.getElementById('btn-rescaled').classList.add('active');
+      } else {
+        document.getElementById('btn-norescaled').classList.add('active');
+      }
+    }
+  </script>
+
+  <!-- Data warning -->
+    <div class="data-warning" style="text-align:left ; font-size: 0.95rem; margin-top: 1rem; color: #555; background-color: #f9f9f9; padding: 0.8rem 1rem; border-left: 4px solid #BA665Cff; border-radius: 4px;">
+    <strong> Data Insight:</strong> As you explore the maps, you may notice missing asthma data for certain neighborhoods, particularly the South Bronx, due to gaps in neighborhood-level records. However, studies show that the South Bronx mirrors the trends seen in other underserved areas, with elevated pollution levels and asthma rates that are more than double the city's average. Despite these data gaps, the maps still provide valuable insights into the broader pollution and health disparities across the city.
+    <br>
+    <small>For more information, you can check out the full articles on <a href="https://www.cbsnews.com/newyork/news/bronx-asthma-rates-environmental-justice/" target="_blank">asthma rates in the Bronx</a> and <a href="https://pix11.com/news/created-equal/environmental-racism-in-the-bronx-why-the-asthma-rate-is-so-high-in-the-borough/" target="_blank">environmental racism in the Bronx</a>.</small>
+  </div><br>
+
+  <!-- Question about decline in pollution -->
+  <div class="data-insight">
+    <p><strong>It is clear that social injustice remains a challenge we still need to address. However, from a more optimistic standpoint, we can also observe improvements in air pollution</strong>. The question that arises from this observation is: <strong>What has driven this decline in pollution?</strong> As we will explore in the next section, this positive shift is not accidental, it is the result of deliberate government policies and targeted interventions. Let's take a closer look at how these efforts have contributed to cleaner air in the following tab.</p>
+  </div>
+
+  
+
+  <!-- Styling the information icon inside the button -->
+  <style>
+    .info-circle {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      width: 20px; /* Circle size */
+      height: 20px; /* Circle size */
+      color: #ffffff; /* Default text color (black) */
+      font-weight: bold;
+      border-radius: 50%; /* Makes it round */
+      font-size: 14px; /* Font size of the "i" */
+      margin-right: 10px; /* Space between the icon and the text */
+      border: 2px solid #ffffff; /* Border color same as the text color */
+    }
+  </style>
+</div>

@@ -1,0 +1,539 @@
+/* ---------------------------- */
+/* Variables de colores y estilos */
+/* ---------------------------- */
+:root {
+  --indian-red: #BA665Cff;
+  --outer-space: #414A46ff;
+  --platinum: #E5E4E2ff;
+  --pale-dogwood: #F4D6CBff;
+  --linen: #F5E8E0ff;
+  --primary: var(--indian-red);
+  /* Usamos Salmon como color principal */
+  --secondary: var(--pale-dogwood);
+  /* Usamos Pale Dogwood como color secundario */
+  --card-bg: var(--platinum);
+  /* Usamos Platinum para el fondo de las tarjetas */
+  --content-bg: var(--linen);
+  /* Usamos Battleship Gray para el fondo de contenido */
+  --white: #FFFFFF;
+  --text-primary: #0F172A;
+  /* Gris muy oscuro, casi negro (mejor contraste) */
+  --text-muted: #64748B;
+  /* Gris medio para texto secundario */
+  --border: #E2E8F0;
+  /* Gris claro para bordes sutiles */
+  --border-radius: 12px;
+  --transition: all 0.3s ease;
+  --shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+
+  /* Semi-transparent versions of background colors */
+  --card-bg-transparent: rgba(229, 228, 226, 0.60);  /* Platinum (0.85 opacity) */
+  --content-bg-transparent: rgba(245, 232, 224, 0.60);  /* Linen (0.85 opacity) */
+}
+
+/* ---------------------------- */
+/* Reset y estilos base */
+/* ---------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', 'Inter', sans-serif;
+  background: url('/assets/images/nyc.jpg') no-repeat center center fixed;
+  /* Fondo con la imagen */
+  background-size: cover;
+  /* Asegura que cubra todo el fondo */
+  color: var(--text-primary);
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ---------------------------- */
+/* Barra de navegación superior (fija) */
+.nav-tabs {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: var(--card-bg);
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  gap: 1rem;
+  border-radius: 0 0 20px 20px;
+  box-shadow: var(--shadow);
+  z-index: 1000;
+  /* Asegura que la barra esté encima del contenido */
+}
+
+.nav-tab {
+  padding: 0.5rem 1rem;
+  background: var(--card-bg);
+  color: var(--text-primary);
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: var(--transition);
+  border: 1px solid var(--border);
+}
+
+.nav-tab:hover {
+  background: var(--primary);
+  color: var(--white);
+}
+
+.nav-tab.active {
+  background: var(--primary);
+  color: var(--white);
+}
+
+/* Espaciado adicional para evitar que el contenido se solape con la barra de navegación */
+.content-wrapper,
+.demo-content {
+  padding-top: 80px;
+  /* Ajusta esto si la altura de la barra cambia */
+}
+
+/* ---------------------------- */
+/* Contenedor principal que envuelve todo el contenido */
+.content-wrapper,
+.demo-content {
+  background: var(--content-bg-transparent);
+  /* Fondo del contenido más suave */
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+  transition: var(--transition);
+  backdrop-filter: blur(10px);
+  /* Optional: soft blur behind the container for better readability */
+}
+
+/* Ajustes para la visibilidad de las diferentes secciones */
+.content-pane {
+  background: var(--dark-bg);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+  padding: 7rem 2rem 2rem;
+  overflow-y: auto;
+}
+
+.content-pane.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Tipografía */
+h1,
+h2,
+h3,
+h4 {
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 1.8rem;
+}
+
+.subtitle {
+  color: var(--text-muted);
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+/* Componentes UI */
+.bullet-container,
+.health-metrics,
+.solutions-grid,
+.community-spotlight {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  margin: 2rem 0;
+}
+
+.bullet-box,
+.metric-card,
+.solution-card,
+.org-card {
+  background: var(--card-bg-transparent);
+  /* Use the transparent background for all card-like elements */
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  transition: var(--transition);
+  border: 1px solid var(--border);
+}
+
+.bullet-box:hover,
+.metric-card:hover,
+.solution-card:hover,
+.org-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow);
+  border-color: var(--primary);
+}
+
+/* Elementos especiales */
+.info-box {
+  background: var(--primary);
+  color: var(--white);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  margin: 2rem 0;
+}
+
+.timeline {
+  border-left: 3px solid var(--primary);
+  padding-left: 1.5rem;
+  margin: 2rem 0;
+}
+
+.timeline-event {
+  margin-bottom: 1.5rem;
+}
+
+.event-date {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+/* Botones y enlaces */
+.action-button {
+  display: inline-block;
+  background: var(--primary);
+  color: var(--white);
+  padding: 0.8rem 1.8rem;
+  border-radius: var(--border-radius);
+  text-decoration: none;
+  font-weight: 600;
+  transition: var(--transition);
+  border: none;
+  cursor: pointer;
+}
+
+.action-button:hover {
+  background: var(--secondary);
+  transform: translateY(-2px);
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+a:hover {
+  color: var(--secondary);
+}
+
+/* Navegación flotante */
+.nav-arrow {
+  width: 50px;
+  height: 50px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 100;
+  transition: var(--transition);
+}
+
+.nav-arrow:hover {
+  background: var(--primary);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.prev-arrow {
+  left: 2rem;
+}
+
+.next-arrow {
+  right: 2rem;
+}
+
+.nav-arrow::before {
+  content: '';
+  display: block;
+  width: 12px;
+  height: 12px;
+  border-top: 2px solid currentColor;
+  border-right: 2px solid currentColor;
+  transform: rotate(-135deg);
+}
+
+.next-arrow::before {
+  transform: rotate(45deg);
+}
+
+/* ---------------------------- */
+/* Responsive */
+/* ---------------------------- */
+@media (max-width: 768px) {
+  .content-pane {
+    padding: 5rem 1rem 1rem;
+  }
+
+  .content-wrapper,
+  .demo-content {
+    padding: 1.5rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  .nav-arrow {
+    width: 40px;
+    height: 40px;
+    bottom: 1rem;
+    top: auto;
+  }
+}
+
+/* ---------------------------- */
+/* Efectos especiales */
+/* ---------------------------- */
+::selection {
+  background: var(--primary);
+  color: var(--white);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--dark-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 4px;
+}
+
+/* Pop-up Modal Styles */
+.popup-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.popup-modal.active {
+  display: flex;
+  opacity: 1;
+}
+
+.popup-content {
+  background: var(--card-bg);
+  border-radius: var(--border-radius);
+  width: 90%;
+  max-width: 700px;
+  padding: 2rem;
+  position: relative;
+  border: 1px solid var(--primary);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.popup-close {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  font-size: 2rem;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.popup-close:hover {
+  color: var(--primary);
+  transform: scale(1.2);
+}
+
+.popup-body {
+  margin-top: 1.5rem;
+}
+
+.popup-body h4 {
+  margin-top: 1.5rem;
+  color: var(--secondary);
+}
+
+.popup-body ul {
+  margin: 1rem 0 1rem 1.5rem;
+}
+
+.popup-body li {
+  margin-bottom: 0.5rem;
+}
+
+/* Ajustes para el botón de activación del pop-up */
+.popup-trigger {
+  margin-bottom: 2rem;
+}
+
+/* ---------------------------- */
+/* Estilo de los botones de tabs (slider-tabs) */
+/* ---------------------------- */
+.slider-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.slider-tab {
+  background: var(--card-bg);
+  border: 2px solid var(--primary);
+  color: var(--primary);
+  padding: 0.6rem 1.2rem;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: var(--transition);
+  font-weight: 600;
+  text-align: center;
+  z-index: 10;
+  /* Asegura que está encima si hace falta */
+  position: relative;
+  /* Si no lo tienes, para z-index */
+}
+
+.slider-tab:hover {
+  background: var(--primary);
+  color: var(--white);
+}
+
+.slider-tab.active {
+  background: var(--primary);
+  color: var(--white);
+  box-shadow: var(--shadow);
+}
+
+
+.read-more-list {
+  list-style-type: disc; /* Esto asegura que los puntos sigan siendo círculos */
+  padding-left: 15px; /* Ajusta la sangría para los puntos */
+}
+
+.read-more-list li {
+  margin-bottom: 5px;  /* Espacio entre los elementos de la lista */
+}
+
+
+/* Modal background */
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 1; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color:  #BA665Cff; /* Rosita suave */
+  padding-top: 60px;
+  transition: opacity 0.3s ease;
+}
+
+/* Modal content */
+.modal-content {
+  background-color: #fff;
+  margin: 5% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 700px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Close button */
+.close {
+  color: #aaa;
+  font-size: 28px;
+  font-weight: bold;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+}
+
+/* Modal title */
+.modal-title {
+  color:  #000;
+  font-size: 28px; 
+  font-weight: bold;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+/* Description of features */
+.feature-description {
+  font-size: 16px;
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.feature-description strong {
+  color: #000000;
+  font-size: 18px;
+}
+
+/* Add spacing and styling for the modal content */
+.modal-content p {
+  font-family: 'Arial', sans-serif;
+  font-size: 16px;
+  color: #444;
+  line-height: 1.6;
+}
+
+/* Add hover effect for descriptions */
+.feature-description:hover {
+  background-color: #f7f7f7;
+  border-radius: 5px;
+  padding: 5px;
+}
