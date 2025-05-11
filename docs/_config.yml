@@ -34,7 +34,10 @@ assets:
   images: "/assets/images/"
   css: "/assets/css/"
   plots: "/assets/plots/"
-  js : "/assets/js/"
+  js: "/assets/js/"
+
+includes:
+  tabs: "_includes/tabs/"
 
 collections:
   posts:
