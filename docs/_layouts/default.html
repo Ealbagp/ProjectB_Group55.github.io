@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ page.title | default: site.title }}</title>
 
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
@@ -13,17 +14,23 @@
         /* Dynamic background styles for each tab */
         {% for i in (1..4) %}
             {% assign bg_key = "tab" | append: i | append: "_bg" %}
-            {% assign bg_image = page[bg_key] | default: site.baseurl %}
+            {% if page[bg_key] %}
+                {% assign bg_image = page[bg_key] %}
+            {% else %}
+                {% assign bg_image = site.baseurl | append: "/assets/images/nyc.jpg" %}
+            {% endif %}
             .content-pane[data-content="{{ i }}"] {
                 background-image: url({{ bg_image }});
+                background-size: cover;
+                background-position: center;
             }
         {% endfor %}
     </style>
 </head>
 
-
 <body>
     <div class="slider-container">
+
         <!-- Navigation Arrows -->
         <div class="slider-nav">
             <button class="nav-arrow prev-arrow" aria-label="Previous slide">
@@ -34,37 +41,32 @@
             </button>
         </div>
 
+        <!-- Slider Header with Tabs -->
         <div class="slider-header">
             <div class="slider-tabs">
                 {% for i in (1..4) %}
                     {% assign title_key = "tab" | append: i | append: "_title" %}
                     <div class="slider-tab {% if forloop.first %}active{% endif %}" data-tab="{{ i }}">
-                        {{ page[title_key] | default: "DEMO " }}
+                        {{ page[title_key] | default: "DEMO " | append: i }}
                     </div>
                 {% endfor %}
             </div>
         </div>
 
+        <!-- Slider Content -->
         <div class="slider-content">
-            {% for i in (1..5) %}
+            {% for i in (1..4) %}
                 <div class="content-pane {% if forloop.first %}active{% endif %}" data-content="{{ i }}">
                     <div class="content-overlay">
-                        {% if i == 1 %}
-                            {% include tabs/demo1.html %}
-                        {% elsif i == 2 %}
-                            {% include tabs/demo2.html %}
-                        {% elsif i == 3 %}
-                            {% include tabs/demo3.html %}
-                        {% elsif i == 4 %}
-                            {% include tabs/demo4.html %}
-                        {% endif %}
+                        {% include tabs/demo{{ i }}.html %}
                     </div>
                 </div>
             {% endfor %}
         </div>
+
     </div>
 
-    <!-- CORREGIDO -->
+    <!-- JavaScript -->
     <script src="{{ site.baseurl }}/assets/js/slider.js"></script>
 </body>
 
