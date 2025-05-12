@@ -31,13 +31,13 @@ github_username:  Ealbagp
 theme: minima
 
 assets:
-  images: "/assets/images/"
-  css: "/assets/css/"
-  plots: "/assets/plots/"
-  js: "/assets/js/"
+  images: "{{ site.baseurl }}/assets/images/"
+  css: "{{ site.baseurl }}/assets/css/"
+  plots: "{{ site.baseurl }}/assets/plots/"
+  js: "{{ site.baseurl }}/assets/js/"
 
 _includes:
-  tabs: "_includes/tabs/"
+  tabs: "{{ site.baseurl }}/_includes/tabs/"
 
 collections:
   posts:
