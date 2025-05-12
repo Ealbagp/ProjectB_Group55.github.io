@@ -41,7 +41,7 @@ For more detailed analysis and methodology, **refer to Jupyter ProjectB**, which
 This project was developed by:
 - 👩‍💻 **Eva Maria Benito Sanz** (s243313)
 - 👩‍💻 **Camilla Santoro** (s232441)
-- 👩‍💻 **alba Gonzalo Primo** (s243343)
+- 👩‍💻 **Alba Gonzalo Primo** (s243343)
 
 ## Disclaimer
 
