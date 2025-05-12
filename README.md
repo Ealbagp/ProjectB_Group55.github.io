@@ -1,5 +1,3 @@
-Sure, Eva! Here's the **complete** `README.md` file with markdown formatting:
-
 ```md
 # Urban Air Quality Dashboard
 
