@@ -7,7 +7,7 @@ The **Urban Air Quality Dashboard** provides an interactive visualization of air
 This repository is structured as follows:
 
 - 📂 `docs/` – Contains the Jekyll-based website code.
-- 📂 `code/` – Scripts for data analysis and visualization with the processed datasets used in the analysis.
+- 📂 `code and data/` – Scripts for data analysis and visualization with the processed datasets used in the analysis.
 - 📂 `alba/` – Additional scripts and configurations.
 
 ## Installation
