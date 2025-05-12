@@ -42,7 +42,7 @@
 
 body {
   font-family: 'Poppins', 'Inter', sans-serif;
-  background: url('/assets/images/nyc.jpg') no-repeat center center fixed;
+  background: url('nyc.jpg') no-repeat center center fixed;
   /* Fondo con la imagen */
   background-size: cover;
   /* Asegura que cubra todo el fondo */
