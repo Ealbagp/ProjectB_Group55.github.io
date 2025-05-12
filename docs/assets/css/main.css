@@ -537,3 +537,68 @@ a:hover {
   border-radius: 5px;
   padding: 5px;
 }
+/* ---------------------------- */
+/* Explainer Tab Button (Nav Bar) */
+/* ---------------------------- */
+#btn-explainer {
+  padding: 0.5rem 1rem;
+  background: var(--card-bg);
+  color: var(--text-primary);
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: var(--transition);
+  border: 1px solid var(--border);
+}
+
+#btn-explainer:hover {
+  background: var(--primary);
+  color: var(--white);
+}
+
+#btn-explainer.active {
+  background: var(--primary);
+  color: var(--white);
+}
+
+/* ---------------------------- */
+/* Explainer Tab Content (for the link in the text) */
+/* ---------------------------- */
+#explainer a {
+  color: var(--primary);
+  font-weight: bold;
+  text-decoration: underline;
+  transition: var(--transition);
+}
+
+#explainer a:hover {
+  color: var(--secondary);
+}
+html, body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.content-slider{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.slider-container {
+    flex-grow: 1;
+}
+
+footer {
+    background: var(--outer-space);
+    color: var(--white);
+    text-align: center;
+    padding: 15px;
+    width: 100%;
+    box-shadow: var(--shadow);
+    position: relative;
+    margin-top: 40px; /* Creates separation after content */
+}

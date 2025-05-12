@@ -12,23 +12,40 @@
 
     <style>
         /* Dynamic background styles for each tab */
-        {% for i in (1..4) %}
-            {% assign bg_key = "tab" | append: i | append: "_bg" %}
-            {% if page[bg_key] %}
-                {% assign bg_image = page[bg_key] %}
-            {% else %}
-                {% assign bg_image = site.baseurl | append: "/assets/images/nyc.jpg" %}
-            {% endif %}
-            .content-pane[data-content="{{ i }}"] {
-                background-image: url({{ bg_image }});
-                background-size: cover;
-                background-position: center;
-            }
-        {% endfor %}
+            {
+            % for i in (1..5) %
+        }
+
+            {
+            % assign bg_key="tab" | append: i | append: "_bg" %
+        }
+
+            {
+            % if page[bg_key] %
+        }
+
+            {
+            % assign bg_image=page[bg_key] %
+        }
+
+            {
+            % endif %
+        }
+
+        .content-pane[data-content="{{ i }}"] {
+            background-image: url({{ bg_image }});
+            background-size: cover;
+            background-position: center;
+        }
+
+            {
+            % endfor %
+        }
     </style>
 </head>
 
 <body>
+    <div class="content-slider">
     <div class="slider-container">
 
         <!-- Navigation Arrows -->
@@ -44,30 +61,33 @@
         <!-- Slider Header with Tabs -->
         <div class="slider-header">
             <div class="slider-tabs">
-                {% for i in (1..4) %}
-                    {% assign title_key = "tab" | append: i | append: "_title" %}
-                    <div class="slider-tab {% if forloop.first %}active{% endif %}" data-tab="{{ i }}">
-                        {{ page[title_key] | default: "DEMO " | append: i }}
-                    </div>
+                {% for i in (1..5) %}
+                {% capture title_key %}tab{{ i }}_title{% endcapture %}
+                {% assign title_value = page[title_key] %}
+                <div class="slider-tab {% if forloop.first %}active{% endif %}" data-tab="{{ i }}">
+                    {{ title_value | default: "DEMO " }}
+                </div>
                 {% endfor %}
             </div>
         </div>
 
+
         <!-- Slider Content -->
         <div class="slider-content">
-            {% for i in (1..4) %}
-                <div class="content-pane {% if forloop.first %}active{% endif %}" data-content="{{ i }}">
-                    <div class="content-overlay">
-                        {% include tabs/demo{{ i }}.html %}
-                    </div>
+            {% for i in (1..5) %}
+            <div class="content-pane {% if forloop.first %}active{% endif %}" data-content="{{ i }}">
+                <div class="content-overlay">
+                    {% include tabs/demo{{ i }}.html %}
+                      {% include footer1.html %}
                 </div>
+            </div>
             {% endfor %}
         </div>
 
     </div>
-
+</div>
     <!-- JavaScript -->
     <script src="{{ site.baseurl }}/assets/js/slider.js"></script>
-</body>
+  
 
-</html>
+</body>
