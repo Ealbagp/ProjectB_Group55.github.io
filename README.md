@@ -1,4 +1,3 @@
-```md
 # Urban Air Quality Dashboard
 
 ## Overview
