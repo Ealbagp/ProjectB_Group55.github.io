@@ -30,14 +30,6 @@ github_username:  Ealbagp
 # Build settings
 theme: minima
 
-assets:
-  images: "{{ site.baseurl }}/assets/images/"
-  css: "{{ site.baseurl }}/assets/css/"
-  plots: "{{ site.baseurl }}/assets/plots/"
-  js: "{{ site.baseurl }}/assets/js/"
-
-_includes:
-  tabs: "{{ site.baseurl }}/_includes/tabs/"
 
 collections:
   posts:
